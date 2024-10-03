@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+    [SerializeField] private float speed;
     void Update()
     {
         if (Input.touchCount > 0)
@@ -18,12 +19,12 @@ public class CharacterMovement : MonoBehaviour
             switch (touch.phase)
             {
                 case TouchPhase.Began:
-                    transform.position = touchPosition;
+                    //transform.position = touchPosition;
                     break;
 
                 case TouchPhase.Moved:
                 case TouchPhase.Stationary:
-                    transform.position = Vector3.Lerp(transform.position, touchPosition, Time.deltaTime * 10f);
+                    transform.position = Vector3.Lerp(transform.position, touchPosition, Time.deltaTime * speed);
                     break;
 
             }
