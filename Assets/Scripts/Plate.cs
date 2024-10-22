@@ -12,6 +12,7 @@ public class Plate : MonoBehaviour
     [SerializeField] private Health health;
     private List<GameObject> objectsOnPlate = new List<GameObject>();
     [SerializeField] private Spawner spawner;
+    [SerializeField] ScoreController scoreController;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -47,6 +48,7 @@ public class Plate : MonoBehaviour
         yield return new WaitForSeconds(1f);
         foreach (GameObject go in objectsOnPlate)
         {
+            scoreController.AddScore();
             Destroy(go);
             yield return new WaitForSeconds(0.3f);
         }
