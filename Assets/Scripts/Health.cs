@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int health = 3;
     [SerializeField] private List<GameObject> healthIndicators = new List<GameObject>();
+    [SerializeField] PauseController pauseController;
 
 
     public void Damage()
@@ -21,6 +22,6 @@ public class Health : MonoBehaviour
     private void Die()
     {
         Time.timeScale = 0;
-        //setactive death screen
+        pauseController.GameOver();
     }
 }

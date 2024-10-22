@@ -12,9 +12,13 @@ public class PauseController : MonoBehaviour
     [SerializeField] private GameObject gameOver;
     [SerializeField] private TextMeshProUGUI gameOverScore;
     [SerializeField] private ScoreController scoreController;
+    [SerializeField] private int menuSceneIndex = 0;
+    [SerializeField] private int gameSceneIndex = 1;
+    
 
     private void Start()
     {
+        Time.timeScale = 1;
         gameUI.SetActive(true);
         pauseMenu.SetActive(false);
         gameOver.SetActive(false);
@@ -36,7 +40,12 @@ public class PauseController : MonoBehaviour
 
     public void BackToMenu()
     {
-        //SceneManager.LoadScene()
+        SceneManager.LoadScene(menuSceneIndex);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(gameSceneIndex);
     }
 
     public void GameOver()
