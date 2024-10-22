@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ScoreController : MonoBehaviour
 {
-    private int score = 0;
+    public int score = 0;
     [SerializeField] private int scorePerObject = 5;
     [SerializeField] private TextMeshProUGUI scoreText;
 
