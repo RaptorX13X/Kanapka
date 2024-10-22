@@ -40,7 +40,7 @@ public class Spawner : MonoBehaviour
     {
         while (canSpawn)
         {
-            Instantiate(ingredientsPrefabs[Random.Range(0, ingredientsPrefabs.Count)], new Vector3(Random.Range(leftSide.position.x, rightSide.position.x), spawner.position.y, spawner.position.z), quaternion.identity);
+            Instantiate(ingredientsPrefabs[Random.Range(0, ingredientsPrefabs.Count)], new Vector3(Random.Range(leftSide.position.x, rightSide.position.x), spawner.position.y, spawner.position.z),transform.rotation * Quaternion.Euler(-90,0,0));
             yield return new WaitForSeconds(waitTime);
         }
     }

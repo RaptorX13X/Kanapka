@@ -154,8 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientsPrefabs:
-  - {fileID: 2566649053866418901, guid: f29a53b68ec028f4b9fa0c127c8fe20d, type: 3}
-  - {fileID: 3007844232457932667, guid: 95b229624e3946744b20e8a2d1633cc9, type: 3}
+  - {fileID: 6687713753706041060, guid: c1be630ec4377d74c97b23e1160671f0, type: 3}
   spawner: {fileID: 34994422}
   leftSide: {fileID: 1290508855}
   rightSide: {fileID: 1513190101}
