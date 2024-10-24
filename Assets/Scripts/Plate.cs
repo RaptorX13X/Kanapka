@@ -14,6 +14,12 @@ public class Plate : MonoBehaviour
     [SerializeField] private Spawner spawner;
     [SerializeField] ScoreController scoreController;
     [SerializeField] private Vector3 CopyTheBoxColliderCenterHerePlease;
+    
+    
+    [SerializeField] private AudioClip goodIngridientSound;
+    [SerializeField] private AudioClip badIngridientSound;
+    [SerializeField] private AudioClip roundFinishedSound;
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,11 +32,13 @@ public class Plate : MonoBehaviour
                 anchor = goodIngridient.ingdirientAnchor;
                 trigger.center += new Vector3(0, 0, avrgIngSize/1.5f);
                 objectsOnPlate.Add(goodIngridient.gameObject);
+                SoundManager.instance.PlaySound(goodIngridientSound);
             }
             else if (other.TryGetComponent(out BadIng badIng))
             {
                 Destroy(badIng.gameObject);
                 health.Damage();
+                SoundManager.instance.PlaySound(badIngridientSound);
             }
             else if (other.TryGetComponent(out FinishBun bun))
             {
@@ -39,6 +47,7 @@ public class Plate : MonoBehaviour
                 StartCoroutine(FinishRoutine());
                 anchor = startingAnchor;
                 trigger.center = CopyTheBoxColliderCenterHerePlease;
+                SoundManager.instance.PlaySound(roundFinishedSound);
             }
         }
     }
