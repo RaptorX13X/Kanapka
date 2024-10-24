@@ -23,7 +23,7 @@ public class Plate : MonoBehaviour
                 goodIngridient.AnchorYourself(anchor);
                 if (goodIngridient.anchored) return;
                 anchor = goodIngridient.ingdirientAnchor;
-                trigger.center += new Vector3(0, avrgIngSize/1.5f, 0);
+                trigger.center += new Vector3(0, 0, avrgIngSize/1.5f);
                 objectsOnPlate.Add(goodIngridient.gameObject);
             }
             else if (other.TryGetComponent(out BadIng badIng))

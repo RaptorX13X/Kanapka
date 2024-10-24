@@ -60,7 +60,7 @@ public class Spawner : MonoBehaviour
             yield return new WaitForSeconds(bunCooldown);
             Instantiate(endBun,
                 new Vector3(Random.Range(leftSide.position.x, rightSide.position.x), spawner.position.y,
-                    spawner.position.z), quaternion.identity);
+                    spawner.position.z), transform.rotation * Quaternion.Euler(-90,0,0));
             yield return new WaitForSeconds(waitTime);
         }
     }
