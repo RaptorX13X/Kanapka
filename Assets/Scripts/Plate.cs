@@ -13,6 +13,7 @@ public class Plate : MonoBehaviour
     private List<GameObject> objectsOnPlate = new List<GameObject>();
     [SerializeField] private Spawner spawner;
     [SerializeField] ScoreController scoreController;
+    [SerializeField] private Vector3 CopyTheBoxColliderCenterHerePlease;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -37,7 +38,7 @@ public class Plate : MonoBehaviour
                 objectsOnPlate.Add(bun.gameObject);
                 StartCoroutine(FinishRoutine());
                 anchor = startingAnchor;
-                trigger.center = new Vector3(0, 0.75f, 0);
+                trigger.center = CopyTheBoxColliderCenterHerePlease;
             }
         }
     }
