@@ -275,9 +275,9 @@ MonoBehaviour:
   spawner: {fileID: 34994419}
   scoreController: {fileID: 2133850929}
   CopyTheBoxColliderCenterHerePlease: {x: 0, y: 0, z: 0.00075}
-  goodIngridientSound: {fileID: 0}
-  badIngridientSound: {fileID: 0}
-  roundFinishedSound: {fileID: 0}
+  goodIngridientSound: {fileID: 8300000, guid: e397e3d0bce725e47ad712762b3a51c7, type: 3}
+  badIngridientSound: {fileID: 8300000, guid: 104d1a2c2d615924981cb5b31e55964e, type: 3}
+  roundFinishedSound: {fileID: 8300000, guid: 16b1794f1411cd248bee088c3306a5ed, type: 3}
 --- !u!65 &47831385
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2651,7 +2651,7 @@ MonoBehaviour:
   - {fileID: 1500238390}
   - {fileID: 570553662}
   pauseController: {fileID: 2133850928}
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 72ffa83005ff2964d9afa19d28b964c0, type: 3}
 --- !u!4 &2133850927
 Transform:
   m_ObjectHideFlags: 0
@@ -2711,11 +2711,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 45e1da1d37df96c48b64320026061c41, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
