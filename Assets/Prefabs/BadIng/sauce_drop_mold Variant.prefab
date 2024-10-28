@@ -93,7 +93,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ccdf13ffa3992ee469ec8889e8e228ff, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8411861594012373247, guid: 2ea5a056bb0861f4d9560b8064d5f65c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -180,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa0387ef10d36746948ffbaf3aab6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fixTheFuckingRotation: {x: -90, y: 0, z: 0}
 --- !u!114 &-3598459047125509070
 MonoBehaviour:
   m_ObjectHideFlags: 0
