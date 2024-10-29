@@ -19,17 +19,26 @@ public class MainMenuController : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(gameSceneIndex);
+        Debug.Log("clicked");
     }
 
     public void HowToPlay()
     {
         menuCanvas.SetActive(false);
         howToPlayCanvas.SetActive(true);
+        Debug.Log("clicked");
     }
 
     public void BackToMenu()
     {
         menuCanvas.SetActive(true);
         howToPlayCanvas.SetActive(false);
+    }
+
+    public void Test()
+    {
+        
+        Debug.Log("clicked");
+        
     }
 }

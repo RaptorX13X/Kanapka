@@ -19,7 +19,7 @@ public class Plate : MonoBehaviour
     [SerializeField] private AudioClip goodIngridientSound;
     [SerializeField] private AudioClip badIngridientSound;
     [SerializeField] private AudioClip roundFinishedSound;
-    
+    [SerializeField] private RoundController roundController;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -32,6 +32,7 @@ public class Plate : MonoBehaviour
                 anchor = goodIngridient.ingdirientAnchor;
                 trigger.center += new Vector3(0, 0, avrgIngSize/1.5f);
                 objectsOnPlate.Add(goodIngridient.gameObject);
+                scoreController.AddScore();
                 SoundManager.instance.PlaySound(goodIngridientSound);
             }
             else if (other.TryGetComponent(out BadIng badIng))
@@ -58,11 +59,10 @@ public class Plate : MonoBehaviour
         yield return new WaitForSeconds(1f);
         foreach (GameObject go in objectsOnPlate)
         {
-            scoreController.AddScore();
             Destroy(go);
-            yield return new WaitForSeconds(0.3f);
         }
         yield return new WaitForSeconds(1f);
+        roundController.AddRoundTime();
         spawner.StartSpawning();
     }
 }

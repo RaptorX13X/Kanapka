@@ -10,6 +10,7 @@ public class PauseController : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject gameOver;
+    [SerializeField] private GameObject howToPlay;
     [SerializeField] private TextMeshProUGUI gameOverScore;
     [SerializeField] private ScoreController scoreController;
     [SerializeField] private int menuSceneIndex = 0;
@@ -22,6 +23,7 @@ public class PauseController : MonoBehaviour
         gameUI.SetActive(true);
         pauseMenu.SetActive(false);
         gameOver.SetActive(false);
+        howToPlay.SetActive(false);
     }
 
     public void PauseGame()
@@ -48,6 +50,17 @@ public class PauseController : MonoBehaviour
         SceneManager.LoadScene(gameSceneIndex);
     }
 
+    public void HowToPlay()
+    {
+        pauseMenu.SetActive(false);
+        howToPlay.SetActive(true);
+    }
+
+    public void ExitHTP()
+    {
+        pauseMenu.SetActive(true);
+        howToPlay.SetActive(false);
+    }
     public void GameOver()
     {
         gameOver.SetActive(true);

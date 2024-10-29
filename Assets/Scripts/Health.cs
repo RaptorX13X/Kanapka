@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     [SerializeField] PauseController pauseController;
     
     [SerializeField] private AudioClip deathSound;
+    [SerializeField] private ScoreController scoreController;
 
 
     public void Damage()
@@ -25,6 +26,7 @@ public class Health : MonoBehaviour
     {
         SoundManager.instance.PlaySound(deathSound);
         Time.timeScale = 0;
+        if (PlayerPrefs.GetInt("Score") < scoreController.score) PlayerPrefs.SetInt("Score", scoreController.score);
         pauseController.GameOver();
     }
 }

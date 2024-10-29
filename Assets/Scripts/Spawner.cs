@@ -18,6 +18,8 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] private GameObject endBun;
     private bool canSpawn = true;
+    
+    [SerializeField] private RoundController roundController;
 
     private void Start()
     {
@@ -47,7 +49,7 @@ public class Spawner : MonoBehaviour
 
     IEnumerator TimerRoutine()
     {
-        yield return new WaitForSeconds(roundTime);
+        yield return new WaitForSeconds(roundTime + roundController.bonusRoundTime);
         canSpawn = false;
         StopAllCoroutines();
         StartCoroutine(EndBun());
